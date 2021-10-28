@@ -29,10 +29,7 @@ public interface ReservationInterface extends CrudRepository<Reservation, Intege
     
     public List<Reservation> findAllByStartDateAfterAndStartDateBefore(Date dateOne, Date dateTwo); 
     
-
     //public List<Reservation> findAllByStartDateBetweenStartDateAndDevolutionDate(Date date);
     public List<Reservation> findAllByStatus(String status);
-    
-    
     
 }

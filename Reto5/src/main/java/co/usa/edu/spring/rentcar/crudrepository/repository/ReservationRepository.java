@@ -76,7 +76,7 @@ public class ReservationRepository {
             Long cantidad=(Long) report.get(i)[1];
             CountCar carro = new CountCar(cantidad, car);
             reser.add(carro);
-            //reser.add(new CountCar(Long) report.get(i)[1],(Car)report.get(i)[0]));
+            //reser.add(new CountCar(Long) = report.get(i)[1],(Car)report.get(i)[0]);
         }
         return reser;
     }
