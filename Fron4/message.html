@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="custom.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <link rel="icon" href="img/rentCar.png" type="image/png" sizes="16x16" />
+    <title>Funciones CRUD con microservicios REST</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/funcionesRest.js"></script>
+    
+  </head>
+
+  <body Onload="loadCar(), loadClient()">
+    <div id="titulo"><h2 align="center" style="color:#fffdfd">Formulario consumo REST - Mensajes</h2></div>
+    
+    <div class="row" id="contenedor" class="body">
+      <div class="col"><input type="text" id="messageText" placeholder="messagetext" class="form-control"></div>
+      <div class="col"><select type="number" name="client" id="selectClient" class="form-control">
+      <option value="0">Seleccione un Cliente...</option>
+      </select></div>
+      <div class="col"><select type="number" name="car" id="selectCar" class="form-control">
+      <option value="0">Seleccione un Carro...</option>
+      </select></div>     
+    </div></br></br>
+    <div id="botones">
+      <button onclick="consultAllMessage()" class="btn btn-secondary mb-2" class='d-grid gap' style="margin-right: 100px">Consultar Mensajes</button>
+    <button onclick="saveMessage()" class="btn btn-secondary mb-2" class='d-grid gap' style="margin-right: 100px">Guardar Mensaje</button>
+    <button onclick="updateInfoMsg()" class="btn btn-secondary mb-2" class='d-grid gap'>Actualizar Mensaje</button>
+    </div> 
+    
+    <div id="resultadoConsulta"></div></br>
+  </body>
+</html>
