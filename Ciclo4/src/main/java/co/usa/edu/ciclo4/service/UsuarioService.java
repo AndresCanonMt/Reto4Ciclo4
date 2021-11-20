@@ -31,10 +31,10 @@ public class UsuarioService {
     
    
     public Usuario saveUsuario(Usuario usuario){
-        if(usuario.getIdUsuario()==null){
+        if(usuario.getId()==null){
             return usuarioRepository.save(usuario);
         }else{
-            Optional<Usuario> usuarioOpt = usuarioRepository.getUsuario(usuario.getIdUsuario());
+            Optional<Usuario> usuarioOpt = usuarioRepository.getUsuario(usuario.getId());
             if (usuarioOpt.isPresent()){
                 return usuarioRepository.save(usuario);
             }else{

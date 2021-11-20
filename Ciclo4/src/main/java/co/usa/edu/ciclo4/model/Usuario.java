@@ -21,7 +21,7 @@ public class Usuario implements Serializable{
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column(unique=true, nullable = false)
-   private Integer idUsuario;
+   private Integer id;
    
    @Column(name = "user_email",length=50, nullable = true)
    private String email;
@@ -34,19 +34,19 @@ public class Usuario implements Serializable{
         super();
    }
 
-    public Usuario(Integer idUsuario, String email, String password, String name) {
-        this.idUsuario = idUsuario;
+    public Usuario(Integer id, String email, String password, String name) {
+        this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
     }
 
-    public Integer getIdUsuario() {
-        return idUsuario;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(Integer id) {
+        this.id= id;
     }
 
     public String getEmail() {
@@ -75,7 +75,7 @@ public class Usuario implements Serializable{
 
    @Override
     public String toString() {
-        return "Usuario{" + "idUsuario=" + idUsuario + ", email=" + email + ", password=" + password + ", name=" + name + '}';
+        return "Usuario{" + "id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + '}';
     }
    
     
