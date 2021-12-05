@@ -52,7 +52,6 @@ public class UserController {
     }
     
     @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
     public Optional<User> getId(@PathVariable("id")Integer id){
         return userService.getId(id);
     }
