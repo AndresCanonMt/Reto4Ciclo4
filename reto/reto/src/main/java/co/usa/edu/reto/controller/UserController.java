@@ -51,7 +51,7 @@ public class UserController {
         userService.delete(id);
     }
     
-    @GetMapping("/browse/{id}")
+    @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public Optional<User> getId(@PathVariable("id")Integer id){
         return userService.getId(id);

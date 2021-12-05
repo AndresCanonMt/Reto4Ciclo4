@@ -46,6 +46,12 @@ public class UserService {
                 if (objeto.getName() != null && objeto.getName().length() > 0) {
                     userOpt.get().setName(objeto.getName());
                 }
+                if (objeto.getBirthtDay()!= null) {
+                    userOpt.get().setBirthtDay(objeto.getBirthtDay());
+                }
+                if (objeto.getMonthBirthtDay()!= null && objeto.getMonthBirthtDay().length()> 0) {
+                    userOpt.get().setMonthBirthtDay(objeto.getMonthBirthtDay());
+                }
                 if (objeto.getAddress() != null && objeto.getAddress().length() > 0) {
                     userOpt.get().setAddress(objeto.getAddress());
                 }

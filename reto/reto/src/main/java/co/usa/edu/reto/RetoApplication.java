@@ -1,6 +1,7 @@
 package co.usa.edu.reto;
 
 import co.usa.edu.reto.crud.CrudGadgetRepository;
+import co.usa.edu.reto.crud.CrudOrderRepository;
 import co.usa.edu.reto.crud.CrudUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,6 +19,9 @@ public class RetoApplication implements CommandLineRunner {
     private CrudUserRepository interfaceUser;
     @Autowired
     private CrudGadgetRepository interfaceGadget;
+    @Autowired
+    private CrudOrderRepository interfaceOrder;
+    
 	public static void main(String[] args) {
 		SpringApplication.run(RetoApplication.class, args);
 	}
@@ -25,6 +29,7 @@ public class RetoApplication implements CommandLineRunner {
         public void run(String...args)throws Exception{
             interfaceUser.deleteAll();
             interfaceGadget.deleteAll();
+            interfaceOrder.deleteAll();
         }
         @Bean
         public WebMvcConfigurer corsConfigurer() {
