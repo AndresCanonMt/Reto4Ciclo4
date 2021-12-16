@@ -7,6 +7,7 @@ package co.usa.edu.reto.repository;
 
 import co.usa.edu.reto.crud.CrudOrderRepository;
 import co.usa.edu.reto.model.Order;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +42,22 @@ public class OrderRepository {
     public List<Order> getBySalesman(String zone){
         return repo.findByZone(zone);
     }
-     
+    
+    public List<Order> getBySalesmanId(Integer id){
+        return repo.getBySalesman(id);
+    }
+    
+    public List<Order> getByStatus(Integer id, String status){
+        return repo.getByStatus(id, status);
+    }
+    
+    public List<Order> getByDate(Integer id, Date fecha){
+        return repo.getByDate(id, fecha);
+    }
+    
     public void delete(Order order){
         repo.delete(order);
     }
+    
+    
 }

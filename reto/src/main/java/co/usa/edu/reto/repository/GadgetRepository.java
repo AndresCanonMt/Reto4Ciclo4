@@ -42,4 +42,12 @@ public class GadgetRepository {
         repo.delete(gadget);
     }
     
+    public List<Gadget> getGadgetByPrice(Double price){
+        return repo.findGadgetByPrice(price);
+    }
+    
+    public List<Gadget> getGadgetByDescription(String text){
+        return repo.findGadgetByDescription(text);
+    }
+    
 }

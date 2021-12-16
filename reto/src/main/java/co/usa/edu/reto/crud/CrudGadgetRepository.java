@@ -6,6 +6,7 @@
 package co.usa.edu.reto.crud;
 
 import co.usa.edu.reto.model.Gadget;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
@@ -18,5 +19,11 @@ public interface CrudGadgetRepository extends MongoRepository<Gadget, Integer>{
     
     @Query("{id: ?0}")
     public Optional<Gadget> getById(Integer id);
+    
+    @Query("{price: {$lte:?0}}")
+    public List<Gadget> findGadgetByPrice(Double price);
+    
+    @Query("{description: {$regex: /?0/}}")
+    public List<Gadget> findGadgetByDescription(String text);
     
 }

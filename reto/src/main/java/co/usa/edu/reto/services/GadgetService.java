@@ -83,4 +83,12 @@ public class GadgetService {
         return gadgetOpt;
     }
     
+    public List<Gadget> getGadgetByPrice(Double price){
+        return repository.getGadgetByPrice(price);
+    }
+    
+    public List<Gadget> getGadgetByDescription(String text){
+        return repository.getGadgetByDescription(text);
+    }
+    
 }

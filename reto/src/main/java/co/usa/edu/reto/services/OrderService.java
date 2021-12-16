@@ -7,6 +7,8 @@ package co.usa.edu.reto.services;
 
 import co.usa.edu.reto.model.Order;
 import co.usa.edu.reto.repository.OrderRepository;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,6 +71,25 @@ public class OrderService {
     
     public List<Order> getBySalesman(String zone){
         return repo.getBySalesman(zone);
+    }
+    
+    public List<Order> getBySalesmanId(Integer id){
+        return repo.getBySalesmanId(id);
+    }
+    
+    public List<Order> getByStatus(Integer id, String status){
+        return repo.getByStatus(id, status);
+    }
+    
+    public List<Order> getByDate(Integer id, String fecha){
+        SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd");
+        Date fechaFormat = new Date();
+        try {
+            fechaFormat = format.parse(fecha);
+        } catch (Exception err) {
+            err.printStackTrace();
+        }
+        return repo.getByDate(id, fechaFormat);
     }
     
     public Order getOrder(Integer id){

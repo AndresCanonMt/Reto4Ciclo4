@@ -83,4 +83,10 @@ public class UserController {
     public User verificarSimilitud(@PathVariable String email,@PathVariable String password){
         return userService.validarUsuario(email, password);
         }
+    
+    @GetMapping("/birthday/{mes}")
+    public List<User> getByMonth(@PathVariable("mes") String mes){
+        return userService.getUsersByMonth(mes);
+    }
+    
 }

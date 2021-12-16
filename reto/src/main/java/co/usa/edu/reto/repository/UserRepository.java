@@ -49,4 +49,9 @@ public class UserRepository {
     public User verificaion2 (String email, String password){
         return repo.findByEmailAndPassword(email, password);
     }
+    
+    public List<User> getUsersByMonth(String mes){
+        return repo.findByMonthBirthtDay(mes);
+    }
+    
 }

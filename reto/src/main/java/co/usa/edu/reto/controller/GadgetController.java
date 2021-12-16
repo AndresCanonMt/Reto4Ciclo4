@@ -65,4 +65,14 @@ public class GadgetController {
         gadgetService.updateGadget(gadget);
     }
     
+    @GetMapping("/price/{price}")
+    public List<Gadget> getGadgetByPrice(@PathVariable("price") Double price){
+        return gadgetService.getGadgetByPrice(price);
+    }
+    
+    @GetMapping("/description/{text}")
+    public List<Gadget> getGadgetByDescription(@PathVariable("text") String text){
+        return gadgetService.getGadgetByDescription(text);
+    }
+    
 }

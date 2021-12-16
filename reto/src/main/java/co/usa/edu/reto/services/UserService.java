@@ -109,5 +109,9 @@ public class UserService {
             return user2;
         }
     }
+    
+    public List<User> getUsersByMonth(String mes){
+        return repository.getUsersByMonth(mes);
+    }
 
 }
